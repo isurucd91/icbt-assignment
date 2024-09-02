@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<html>
+   <html>
 	<head>
 		<title> ABC Restaurant </title>
 		<style type = "text/css">
 			*, body{
 				margin: 0;
 			}
-
 			
 			
 			
@@ -53,39 +52,48 @@
 			
 			
 			
-						
+			
 			#cd_body{
 				background-color: rgb(235,235,235);
 				height: 79.68%;
 			}
-			.cd_ban{
-				display: block;
-				margin-left: 0px;
-				margin-top: 0px;
-				width: 10%;
-				transition: margin-left 1s, margin-top 1s, width 1s;
-			}
-			.cd_ban:hover{
-				margin-left: 5%;
-				margin-top: -20%;
-				width: 60%;
-			}
-			.top-left-text {
-				position: relative;
-				top:0%;
-				left: 0%;
-				color: black;
-				font-size: 130%;
-				text-shadow: 3px 2px 5px rgb(200,200,200);
-			}
 			img{
-				width: 48%;
+				width: 25%;
 			}
-			.mySlides {
+			.mySlides{
 				display: none;
 				text-align: center;
 			}
-			.myDots {
+			.prev, .next{
+				cursor: pointer;
+				position: absolute;
+				top: 50%;
+				width: auto;
+				margin-top: -22px;
+				padding: 16px;
+				color: rgb(50,50,200);
+				font-weight: bold;
+				font-size: 18px;
+				transition: 0.6s ease;
+				border-radius: 0 3px 3px 0;
+				user-select: none;
+			}
+			.next{
+				right: 0;
+				border-radius: 3px 0 0 3px;
+			}
+			.prev:hover, .next:hover{
+				background-color: rgba(0,0,0,0.8);
+			}
+			.text{
+				color: rgb(50,50,200);
+				font-size: 15px;
+				font-weight: bold;
+				padding-top: 5px;
+				width: 100%;
+				text-align: center;
+			}
+			.myDots{
 				cursor: pointer;
 				height: 15px;
 				width: 15px;
@@ -115,8 +123,7 @@
 				from {opacity: .4} 
 				to {opacity: 1}
 			}
-			
-			
+
 			
 			
 			#cd_footer{
@@ -132,7 +139,6 @@
 				list-style-type: none;
 				text-align: center;
 				height: 1px;
-				padding: 10px;
 			}
 			#cdf_li{
 				display: inline;
@@ -150,10 +156,10 @@
 	</head>
 	<body>
 		<div id = "cd_header">
-			<ul class="navsel">
-				<li> <a class="active" href="index.jsp"> Home </a> </li>
+			<ul>
+				<li> <a href="index.jsp"> Home </a> </li>
 				<li> <a href="services.jsp"> Services </a> </li>
-				<li> <a href="gallary.jsp"> Gallary </a> </li>
+				<li> <a class="active" href="gallary.jsp"> Gallary </a> </li>
 				<li> <a href="about.jsp"> About Us </a> </li>
 				<li> <a href="contact.jsp"> Contact Us </a> </li>
 				<li> <a href="login.jsp"> Sign-In </a> </li>
@@ -162,16 +168,29 @@
 		</div>
 		<div id = "cd_body">
 			<div class = "mySlides fade">
-				<img src = "images\abc.jpg">
+				<img src = "images\abcg1.jpeg">
+				<div class="text">Image 1</div>
 			</div>
 			<div class = "mySlides fade">
-				<img src = "images\abc2.jpg">
+				<img src = "images\abcg2.jpg">
+				<div class="text">Image 2</div>
 			</div>
-
+			<div class = "mySlides fade">
+				<img src = "images\abcg3.jfif">
+				<div class="text">Image 3</div>
+			</div>
+			<div class = "mySlides fade">
+				<img src = "images\abcg4.jpg">
+				<div class="text">Image 4</div>
+			</div>
+			<a class="prev" onclick="PlusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="PlusSlides(1)">&#10095;</a>
 			<div style = "text-align:center">
 				<span class="myDots" onclick="CurrentSlide(1)"></span> 
 				<span class="myDots" onclick="CurrentSlide(2)"></span> 
-			</div>
+				<span class="myDots" onclick="CurrentSlide(3)"></span> 
+				<span class="myDots" onclick="CurrentSlide(4)"></span>
+			</div> 
 		</div>
 		<div id = "cd_footer">
 			<address id="add"> © 2024 ABC Restaurant </address>
@@ -185,34 +204,38 @@
 			var slideIndex = 1;	
 			ShowSlides(slideIndex);
 			
+			function PlusSlides(n)
+			{
+				ShowSlides(slideIndex += n);
+			}
+			
 			function ShowSlides(n)
 			{			
-				var slides = document.getElementsByClassName("mySlides");
-				var dots = document.getElementsByClassName("myDots");
-		  
-				if (n > slides.length)
-					slideIndex = 1;
+			  var slides = document.getElementsByClassName("mySlides");
+			  var dots = document.getElementsByClassName("myDots");
+
+			  if (n > slides.length)
+				slideIndex = 1;
 				
-				if (n < 1)
-					slideIndex = slides.length;
-						
-				for (var i = 0; i < slides.length; i++) {
-					slides[i].style.display = "none";  
-				}
+			  if (n < 1)
+				slideIndex = slides.length;
 				
-				for (var i = 0; i < dots.length; i++) {
-					dots[i].className = dots[i].className.replace(" active", "");
-				}
+			  for (var i = 0; i < slides.length; i++) {
+				  slides[i].style.display = "none";  
+			  }
 			  
-				slides[slideIndex-1].style.display = "block";  
-				dots[slideIndex-1].className += " active";
+			  for (var i = 0; i < dots.length; i++) {
+				  dots[i].className = dots[i].className.replace(" active", "");
+			  }
+			  
+			  slides[slideIndex-1].style.display = "block";  
+			  dots[slideIndex-1].className += " active";
 			}
 			
 			function CurrentSlide(n)
 			{
-				ShowSlides(slideIndex = n);
+			  ShowSlides(slideIndex = n);
 			}
 		</script>
 	</body>
 </html>
-

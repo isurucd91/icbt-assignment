@@ -146,73 +146,33 @@
 				color: black;
 				text-decoration: underline;
 			}
-		</style>
+		</style>		
 	</head>
 	<body>
 		<div id = "cd_header">
-			<ul class="navsel">
-				<li> <a class="active" href="index.jsp"> Home </a> </li>
+			<ul>
+				<li> <a href="index.jsp"> Home </a> </li>
 				<li> <a href="services.jsp"> Services </a> </li>
 				<li> <a href="gallary.jsp"> Gallary </a> </li>
-				<li> <a href="about.jsp"> About Us </a> </li>
+				<li> <a class="active"href="about.jsp"> About Us </a> </li>
 				<li> <a href="contact.jsp"> Contact Us </a> </li>
 				<li> <a href="login.jsp"> Sign-In </a> </li>
 			</ul>
 			<h1> ABC Restaurant </h1>
 		</div>
 		<div id = "cd_body">
-			<div class = "mySlides fade">
-				<img src = "images\abc.jpg">
-			</div>
-			<div class = "mySlides fade">
-				<img src = "images\abc2.jpg">
-			</div>
-
-			<div style = "text-align:center">
-				<span class="myDots" onclick="CurrentSlide(1)"></span> 
-				<span class="myDots" onclick="CurrentSlide(2)"></span> 
-			</div>
+			<p>
+				ABC Restaurant is a renowned restaurant located in Colombo, known for its commitment to using the freshest organic and local ingredients. The cuisine, crafted by Michelin star Chef Isuru Dissanayake, focuses on sustainable, seasonal produce that is free from pesticides, synthetic fertilizers, insecticides, and GMOs. The meat, fish, and dairy are sourced from humanely treated, pasture-fed animals without antibiotics or hormones.
+				The restaurant's menu changes regularly to reflect the availability of local ingredients. ABC Restaurant also emphasizes community and the future of the slow food movement, working closely with regional farmers and fair-trade cooperatives.
+			</p>
 		</div>
 		<div id = "cd_footer">
-			<address id="add"> © 2024 ABC Restaurant </address>
+			<address id="add"> Â© 2024 ABC Restaurant </address>
 			<ul id="cdf_ui">
 				<li id="cdf_li"> <a id="cdf_li_a" href="#"> Privacy & Cookies </a> </li>
 				<li id="cdf_li"> <a id="cdf_li_a" href="#"> Help </a> </li>
 				<li id="cdf_li"> <a id="cdf_li_a" href="#"> Feedback </a> </li>
 			</ul>
 		</div>
-		<script type = "text/javascript">
-			var slideIndex = 1;	
-			ShowSlides(slideIndex);
-			
-			function ShowSlides(n)
-			{			
-				var slides = document.getElementsByClassName("mySlides");
-				var dots = document.getElementsByClassName("myDots");
-		  
-				if (n > slides.length)
-					slideIndex = 1;
-				
-				if (n < 1)
-					slideIndex = slides.length;
-						
-				for (var i = 0; i < slides.length; i++) {
-					slides[i].style.display = "none";  
-				}
-				
-				for (var i = 0; i < dots.length; i++) {
-					dots[i].className = dots[i].className.replace(" active", "");
-				}
-			  
-				slides[slideIndex-1].style.display = "block";  
-				dots[slideIndex-1].className += " active";
-			}
-			
-			function CurrentSlide(n)
-			{
-				ShowSlides(slideIndex = n);
-			}
-		</script>
 	</body>
 </html>
-

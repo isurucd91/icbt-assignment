@@ -1,0 +1,182 @@
+*{
+	margin: 0px;
+	padding:0px;
+}
+
+body {
+	font-size: 120%;
+	background: #F8F8FF;
+}
+
+.header {
+	width: 100%;
+	margin: 0px auto;
+	color: white;
+	background: darkblue;
+	text-align: center;
+	padding: 40px;
+	padding-left: 0;
+}
+
+ul{
+	list-style-type: none;
+	width: 100%;
+	padding-top: 10px;
+}
+
+.span-logo {
+display: inline-block;
+vertical-align: top;
+height: 100px;
+width: 100px;
+}
+
+form {
+	width: 35%;
+	margin: 0px auto;
+	padding: 20px;
+	border: 1px solid #B0C4DE;
+	background: white;
+	border-radius: 0px 0px 10px 10px;
+}
+
+.content {
+	width: 50%;
+	margin: 0px auto;
+	padding: 20px;
+	border: 1px solid #B0C4DE;
+	background: white;
+	border-radius: 0px 0px 10px 10px;
+}
+
+.inputs {
+	margin: 10px 20px 10px 0px;
+}
+
+.inputs label {
+	display: block;
+	text-align: left;
+	font-style: italic;
+	font-weight: bold;
+	margin: 3px;
+}
+
+.inputs input {
+	height: 35px;
+	width: 100%;
+	padding: 5px 10px;
+	font-size: 16px;
+	border-radius: 3px;
+	border: 1px solid gray;
+}
+
+.inputs input:hover{
+	box-shadow: 1px 1px 15px rgb(220,220,220);
+}
+
+.button {
+	margin-left: 10px;
+	font-size: 16px;	
+	color: white;
+	background: darkblue;
+	border-radius: 3px;
+	border: none;
+}
+
+.button:hover{
+	box-shadow: 0px 0px 5px black;
+}
+
+.welcome_tag{
+	width: 100%;
+	height: 35px;
+	padding-top: 10px;
+	color: #3C763D;
+	background: #DFF0D8;
+	border: 1px solid #3C763D;
+	margin-bottom: 10px;
+	text-align: left;
+	border-radius: 3px;
+}
+
+.error {
+	width: 90%;
+	margin: 0px auto;
+	padding: 10px;
+	border: 1px solid #B0C4DE;
+	color: red;
+	background: #F2DEDE;
+	border-radius: 3px;
+	text-align: center;
+}
+
+.success {
+	color: #3C763D;
+	background: #DFF0D8;
+	border: 1px solid #3C763D;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.lo{
+	text-decoration:none;
+	margin-top:-22px;
+	margin-right:10px;
+	color: red;
+	float: right;
+}
+
+.lo:hover{
+	text-shadow: 0px 0px 15px rgb(220,220,220);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+img:hover{
+	box-shadow: 0px 0px 15px black;	
+}
+
+.item {
+    width: 120px;
+    height: auto;
+    float: left;
+    margin: 3px;
+    padding: 30px;
+}
+
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+}
+
+.inputfile + label {
+	padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: darkblue;
+    display: inline-block;
+	border-radius: 3px;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+   	box-shadow: 0px 0px 15px black;
+}
+
+.comment{
+	resize: none;
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #B0C4DE;
+	width: 100%;
+	height: 20%;
+}
+
