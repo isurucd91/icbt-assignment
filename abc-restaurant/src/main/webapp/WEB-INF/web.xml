@@ -4,44 +4,4 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-  <servlet>
-  	<servlet-name>homeServlet</servlet-name>
-  	<display-name>homeServlet</display-name>
-  	<description></description>
-  	<servlet-class>controllers.Home</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>loginServlet</servlet-name>
-  	<display-name>loginServlet</display-name>
-  	<description></description>
-  	<servlet-class>controllers.loginServlet</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>logoutServlet</servlet-name>
-  	<display-name>logoutServlet</display-name>
-  	<description></description>
-  	<servlet-class>controllers.logoutServlet</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>registerServlet</servlet-name>
-  	<display-name>registerServlet</display-name>
-  	<description></description>
-  	<servlet-class>controllers.registerServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>homeServlet</servlet-name>
-  	<url-pattern>/Home</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>loginServlet</servlet-name>
-  	<url-pattern>/loginServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>logoutServlet</servlet-name>
-  	<url-pattern>/logoutServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>registerServlet</servlet-name>
-  	<url-pattern>/registerServlet</url-pattern>
-  </servlet-mapping>
 </web-app>

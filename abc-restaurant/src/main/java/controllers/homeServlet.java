@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "/Home") 
-@MultipartConfig(maxFileSize = 16177215) 
 public class homeServlet extends HttpServlet{
 
 	@Override
@@ -22,10 +21,8 @@ public class homeServlet extends HttpServlet{
 			 
 		if(req.getSession().getAttribute("username") != null)
 		{
-			
-			
-		//	RequestDispatcher view = req.getRequestDispatcher("/WEB-INF/Views/Home.jsp");
-		//	view.forward(req, resp);
+			RequestDispatcher view = req.getRequestDispatcher("/WEB-INF/views/home.jsp");
+			view.forward(req, resp);
 		}
 		else
 		{

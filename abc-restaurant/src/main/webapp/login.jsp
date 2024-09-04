@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +30,7 @@
 		<p style="font-weight: bold; text-align:center; text-shadow: 2px 2px 2px rgb(220,220,220);"> Log in to ABC Restaurant </p>
 		<div class = "inputs">
 			<label> Username </label>
-			<input type="text" name="username" value="${username}">
+			<input type="text" name="username" value=${username} >
 		</div>
 		<div class = "inputs">
 			<label> Password </label>
