@@ -12,6 +12,9 @@
 		if(session.getAttribute("username") != null){
 			response.sendRedirect("Home");
 		}
+	String strloginerr = request.getAttribute("loginerr") != null ? (String) request.getAttribute("loginerr") : "";
+	String strusername = request.getAttribute("username") != null ? (String) request.getAttribute("username") : "";
+	String stremail = request.getAttribute("email") != null ? (String) request.getAttribute("email") : "";
 	%>
 	<div class="header">
 		<h1> ABC Restaurant </h1>
@@ -29,11 +32,11 @@
 		<p style="font-weight: bold; text-align:center; text-shadow: 2px 2px 2px rgb(220,220,220);"> Create New Account </p>
 		<div class = "inputs">
 			<label> Username </label>
-			<input type="text" name="username" value="${username}">
+			<input type="text" name="username" value=<%= strusername %>>
 		</div>
 		<div class = "inputs">
 			<label> E-mail </label>
-			<input type="text" name="email" value="${email}">
+			<input type="text" name="email" value=<%= stremail %>>
 		</div>
 		<div class = "inputs">
 			<label> Role </label>
@@ -51,7 +54,7 @@
 			<label> Confirm Password </label>
 			<input type="password" name="password_2">
 		</div>
-		<h5 class="error"> ${loginerr} </h5>
+		<h5 class="error"> <%= strloginerr %> </h5>
 		<div class = "inputs">
 			<input type="submit" class="button" value="Register">
 		</div>

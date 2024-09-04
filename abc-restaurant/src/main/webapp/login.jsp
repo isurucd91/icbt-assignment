@@ -13,6 +13,8 @@
 		if(session.getAttribute("username") != null){
 			response.sendRedirect("Home");
 		}
+		String strloginerr = request.getAttribute("loginerr") != null ? (String) request.getAttribute("loginerr") : "";
+		String strusername = request.getAttribute("username") != null ? (String) request.getAttribute("username") : "";
 	%>
 	<div class="header">
 		<h1> ABC Restaurant </h1>
@@ -30,13 +32,13 @@
 		<p style="font-weight: bold; text-align:center; text-shadow: 2px 2px 2px rgb(220,220,220);"> Log in to ABC Restaurant </p>
 		<div class = "inputs">
 			<label> Username </label>
-			<input type="text" name="username" value=${username} >
+			<input type="text" name="username" value=<%= strusername %> >
 		</div>
 		<div class = "inputs">
 			<label> Password </label>
 			<input type="password" name="password">
 		</div>
-		<h5 class="error"> ${loginerr} </h5>
+		<h5 class="error"> <%= strloginerr %> </h5>
 		<div class="inputs">
 			<input type="submit" class="button" value="Login" >
 		</div>
