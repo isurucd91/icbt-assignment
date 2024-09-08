@@ -56,7 +56,7 @@
 			<div id="item">
 				<p style="padding: 10px; box-shadow: 1px 1px 15px darkblue; margin: 10px;"> <%= role %> </p>
 				<ul>
-					<li> <a href="makreserve.jsp"> Make Reservation </a> </li>
+					<li> <a href="reserve.jsp"> Make Reservation </a> </li>
 					<li> <a href="makpayment.jsp"> Make Payment </a> </li>
 					<li> <a href="submitquery.jsp"> Submit Query </a> </li>
 				</ul>
@@ -69,7 +69,7 @@
 			<div id="item">
 				<p style="padding: 10px; box-shadow: 1px 1px 15px darkblue; margin: 10px;"> <%= role %> </p>
 				<ul>
-					<li> <a href="makreserve.jsp"> View Reservation </a> </li>
+					<li> <a href="viewreserve.jsp"> View Reservation </a> </li>
 					<li> <a href="manqueries.jsp"> Manage Queries </a> </li>
 					<li> <a href="upreservation.jsp"> Update Reservation Status </a> </li>
 					<li> <a href="procpay.jsp"> Process Payment </a> </li>
