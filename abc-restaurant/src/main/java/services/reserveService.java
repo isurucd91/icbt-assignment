@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.Reservation;
 
@@ -35,10 +37,10 @@ public class reserveService {
         return status;	
 	}
 	
-    public Reservation GetData(int custid) throws ClassNotFoundException, SQLException {
+    public List<Reservation> GetData(int custid) throws ClassNotFoundException, SQLException {
     	
         boolean status = false;
-        Reservation res = new Reservation();
+        List<Reservation> resrs = new ArrayList<>();
         
         Class.forName("com.mysql.jdbc.Driver");
 
@@ -50,17 +52,21 @@ public class reserveService {
 
             System.out.println(preparedStatement);
             ResultSet rs = preparedStatement.executeQuery();
-            status = rs.next();
-            res.setmDate(rs.getString(2));
-            res.setmTime(rs.getString(3));
-            res.setmType(rs.getString(4));
-            res.setmStatus(rs.getString(5));
-            res.setmCustID(Integer.parseInt(rs.getString(6)));
+            while (status = rs.next()) {
+            	Reservation res = new Reservation();
+            	res.setmID(Integer.parseInt(rs.getString(1)));
+	            res.setmDate(rs.getString(2));
+	            res.setmTime(rs.getString(3));
+	            res.setmType(rs.getString(4));
+	            res.setmStatus(rs.getString(5));
+	            res.setmCustID(Integer.parseInt(rs.getString(6)));
+	            resrs.add(res);
+            }
         }
         catch (SQLException e) {
             printSQLException(e);
         }
-        return res;
+        return resrs;
     }
 	
     public boolean Validate(Reservation TheReservation) throws ClassNotFoundException {
