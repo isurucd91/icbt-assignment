@@ -122,11 +122,11 @@
 	<body>
 		<div id = "cd_header">
 			<ul>
-				<li> <a class="active" href="index.jsp"> Home </a> </li>
+				<li> <a href="index.jsp"> Home </a> </li>
 				<li> <a href="services.jsp"> Services </a> </li>
 				<li> <a href="gallary.jsp"> Gallary </a> </li>
 				<li> <a href="about.jsp"> About Us </a> </li>
-				<li> <a class="active"href="contact.jsp"> Contact Us </a> </li>
+				<li> <a class="active" href="contact.jsp"> Contact Us </a> </li>
 				<li> <a href="login.jsp"> Sign-In </a> </li>
 			</ul>
 			<h1> ABC Restaurant </h1>

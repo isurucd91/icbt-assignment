@@ -34,6 +34,30 @@ public class registerService {
         return status;	
 	}
 	
+    public String GetRole(String username) throws ClassNotFoundException, SQLException {
+    	
+        boolean status = false;
+        String role = "";
+        
+        Class.forName("com.mysql.jdbc.Driver");
+
+        try {
+        	Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/abcr", "root", "root");
+
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from users where username = ?");
+            preparedStatement.setString(1, username);
+
+            System.out.println(preparedStatement);
+            ResultSet rs = preparedStatement.executeQuery();
+            status = rs.next();
+            role = rs.getString(5);
+        }
+        catch (SQLException e) {
+            printSQLException(e);
+        }
+        return role;
+    }
+	
     public boolean Validate(User TheUser) throws ClassNotFoundException {
     	
         boolean status = false;

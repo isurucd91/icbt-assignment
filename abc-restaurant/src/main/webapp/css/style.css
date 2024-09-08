@@ -8,6 +8,12 @@ body {
 	background: #F8F8FF;
 }
 
+#cd_header{
+	background-color: rgb(50,50,200);
+	height: 130px;
+	text-align: center;
+}
+
 .header {
 	width: 100%;
 	margin: 0px auto;
@@ -140,11 +146,11 @@ img:hover{
 }
 
 .item {
-    width: 120px;
+    width: 250px;
     height: auto;
     float: left;
-    margin: 3px;
-    padding: 30px;
+    margin: 60px;
+    padding: 60px;
 }
 
 

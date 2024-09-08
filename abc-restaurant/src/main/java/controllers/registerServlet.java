@@ -1,6 +1,7 @@
 package controllers;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -54,6 +55,15 @@ public class registerServlet extends HttpServlet{
 							{
 								HttpSession session = req.getSession();
 								session.setAttribute("username", username);
+								
+								try {
+									session.setAttribute("role", RegServ.GetRole(username));
+								}
+								catch (SQLException e)
+								{
+									e.printStackTrace();
+								}
+								
 								req.setAttribute("loginerr" , "");
 								resp.sendRedirect("Home");
 							}

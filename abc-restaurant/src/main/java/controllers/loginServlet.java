@@ -12,6 +12,8 @@ import javax.servlet.http.HttpSession;
 
 import model.User;
 import services.loginService;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 @WebServlet(urlPatterns = "/Login")
 public class loginServlet extends HttpServlet {
@@ -35,6 +37,15 @@ public class loginServlet extends HttpServlet {
 			{
 				HttpSession session = req.getSession();
 				session.setAttribute("username", username);
+				
+				try {
+					session.setAttribute("role", LogServ.GetRole(username));
+				}
+				catch (SQLException e)
+				{
+					e.printStackTrace();
+				}
+	
 				req.setAttribute("loginerr" , "");
 				resp.sendRedirect("Home");
 			}
