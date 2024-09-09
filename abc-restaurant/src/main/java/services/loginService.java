@@ -5,7 +5,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+import model.Query;
 import model.User;
 
 public class loginService {
@@ -80,6 +83,33 @@ public class loginService {
             printSQLException(e);
         }
         return Integer.parseInt(cid);
+    }
+    
+    public List<String> GetCustIDList() throws ClassNotFoundException, SQLException {
+    	
+        boolean status = false;
+        List<String> cidlist = new ArrayList<>();
+        
+        Class.forName("com.mysql.jdbc.Driver");
+
+        try {
+        	Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/abcr", "root", "root");
+
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from users where role=?");
+            preparedStatement.setString(1, "customer");
+            System.out.println(preparedStatement);
+            
+            ResultSet rs = preparedStatement.executeQuery();
+            while (status = rs.next()) {
+            	String cid = rs.getString(1);
+            	cidlist.add(cid);
+            }
+
+        }
+        catch (SQLException e) {
+            printSQLException(e);
+        }
+        return cidlist;
     }
     
     private void printSQLException(SQLException ex) {

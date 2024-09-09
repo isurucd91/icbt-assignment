@@ -58,8 +58,9 @@
 				<ul>
 					<li> <a href="reserve.jsp"> Make Reservation </a> </li>
 					<li> <a href="makpayment.jsp"> Make Payment </a> </li>
-					<li> <a href="submitquery.jsp"> Submit Query </a> </li>	
+					<li> <a href="query.jsp"> Make Query </a> </li>	
 					<li> <a href="viewreserve.jsp"> View Reservation </a> </li>
+					<li> <a href="viewquery.jsp"> View Query </a> </li>
 				</ul>
 			</div>
 		<%
