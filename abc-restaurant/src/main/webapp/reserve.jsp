@@ -9,6 +9,29 @@
 	<meta charset="ISO-8859-1">
 	<title> ABC Restaurant </title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style type = "text/css">
+		ul{
+			list-style-type: none;
+			padding: 10px;
+		}
+		li{
+			display: inline;
+		}
+		li a{
+			padding: 10px;
+			text-decoration: none;
+			color: white;
+			background-color: rgb(75,75,200);
+			text-align: center;
+		}
+		li a.active {
+			background-color: rgb(160,160,200);
+		}
+		li a:hover{
+			color: black;
+			background-color: rgb(160,160,200);
+		}
+	</style>
 </head>
 <body>
 	<div class="header">
@@ -47,5 +70,10 @@
 			<input type="submit" class="button" value="Reserve">
 		</div>
 	</form>
+	<div id="item">
+		<ul>
+			<li> <a href="Home"> Back </a> </li>
+		</ul>
+	</div>
 </body>
 </html>

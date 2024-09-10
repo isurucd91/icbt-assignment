@@ -40,7 +40,7 @@
 		<h1> ABC Restaurant Portal </h1>
 	</div>
 	<form action="ViewQuery" method="post">
-		<p style="font-weight: bold; text-align:center; text-shadow: 2px 2px 2px rgb(220,220,220);"> View Reservations </p>
+		<p style="font-weight: bold; text-align:center; text-shadow: 2px 2px 2px rgb(220,220,220);"> View Queries </p>
 		<div class = "inputs">
 			<input type="submit" class="button" value="Go">
 		</div>

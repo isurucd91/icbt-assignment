@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.Query;
 import model.Reservation;
 
 public class reserveService {
@@ -69,6 +70,29 @@ public class reserveService {
         return resrs;
     }
 	
+    public boolean Update(Reservation TheReservation) throws ClassNotFoundException {
+    	
+        boolean status = false;
+
+        Class.forName("com.mysql.jdbc.Driver");
+
+        try {
+        	Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/abcr", "root", "root");
+
+            PreparedStatement preparedStatement = connection.prepareStatement("update reservations set status = ? where id = ?");
+            preparedStatement.setString(1, TheReservation.getmStatus());
+            preparedStatement.setString(2, Integer.toString(TheReservation.getmID()));
+
+            System.out.println(preparedStatement);
+            if (preparedStatement.executeUpdate()==1)
+            	status = true;
+        }
+        catch (SQLException e) {
+            printSQLException(e);
+        }
+        return status;
+    }
+    
     public boolean Validate(Reservation TheReservation) throws ClassNotFoundException {
     	
         boolean status = false;

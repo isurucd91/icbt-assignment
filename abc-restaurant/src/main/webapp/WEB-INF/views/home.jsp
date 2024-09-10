@@ -72,7 +72,7 @@
 				<p style="padding: 10px; box-shadow: 1px 1px 15px darkblue; margin: 10px;"> <%= role %> </p>
 				<ul>
 					<li> <a href="manqueries.jsp"> Manage Queries </a> </li>
-					<li> <a href="upreservation.jsp"> Update Reservation Status </a> </li>
+					<li> <a href="upreservations.jsp"> Update Reservation Status </a> </li>
 					<li> <a href="procpay.jsp"> Process Payment </a> </li>
 				</ul>
 			</div>
