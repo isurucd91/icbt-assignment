@@ -99,7 +99,7 @@
 		<div id = "cd_header">
 			<ul class="navsel">
 				<li> <a class="active" href="index.jsp"> Home </a> </li>
-				<li> <a href="signin.jsp"> Sign In </a> </li>
+				<li> <a href="login.jsp"> Sign In </a> </li>
 				<li> <a href="register.jsp"> Register </a> </li>
 			</ul>
 			<h1> MEGACITYCAB-Online </h1>
