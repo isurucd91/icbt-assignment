@@ -92,7 +92,7 @@
 				<%
 	       			for (String did : drvIDList) {
 	    		%>
-				<option value="<%= did %>"> <%= did %> </option>
+				<option value="<%= did %>"> <%= did %> (<%= logServ.GetUserName(Integer.parseInt(did)) %>) </option>
 				<%
 			       	}
 				%>

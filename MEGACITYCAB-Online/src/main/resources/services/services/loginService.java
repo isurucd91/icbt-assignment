@@ -58,7 +58,30 @@ public class loginService {
 		}
 		return type;
 	}
+	
+	public String GetUserName(int id) throws ClassNotFoundException, SQLException {
 
+		boolean status = false;
+		String username = "";
+
+		Class.forName("com.mysql.jdbc.Driver");
+
+		try {
+			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mccdb", "root", "root");
+
+			PreparedStatement preparedStatement = connection.prepareStatement("select * from users where id = ?");
+			preparedStatement.setString(1, Integer.toString(id));
+
+			System.out.println(preparedStatement);
+			ResultSet rs = preparedStatement.executeQuery();
+			status = rs.next();
+			username = rs.getString(2);
+		} catch (SQLException e) {
+			printSQLException(e);
+		}
+		return username;
+	}
+	
 	public int GetUserID(String username) throws ClassNotFoundException, SQLException {
 
 		boolean status = false;
