@@ -69,7 +69,7 @@
 		List<String> drvIDList = logServ.GetDriverIDList();
 	%>
 	<form action="Book" method="post">
-		<p style="font-weight: bold; text-align:center; text-shadow: 2px 2px 2px rgb(220,220,220);"> Make a Reservation </p>
+		<p style="font-weight: bold; text-align:center; text-shadow: 2px 2px 2px rgb(220,220,220);"> Make a Booking </p>
 		<div class = "inputs">
 			<label> Pickup Address </label>
 			<input type="text" name="pickadd">
