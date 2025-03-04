@@ -70,7 +70,7 @@
 			<div id="item">
 				<p style="padding: 10px; box-shadow: 1px 1px 15px rgb(200,180,50); margin: 10px;"> <%= type %> </p>
 				<ul>
-					<li> <a href="reserve.jsp"> Book a Ride </a> </li>
+					<li> <a href="book.jsp"> Book a Ride </a> </li>
 					<li> <a href="cancel.jsp"> Cancel a Ride </a> </li>
 					<li> <a href="query.jsp"> View a Ride </a> </li>	
 					<li> <a href="bill.jsp"> Calculate Bill </a> </li>
@@ -87,7 +87,7 @@
 					<li> <a href="addride.jsp"> Add a Ride </a> </li>
 					<li> <a href="viewride.jsp"> View a Ride </a> </li>
 					<li> <a href="remride.jsp"> Remove a Ride </a> </li>
-					<li> <a href="viewreserve.jsp"> View Bookings </a> </li>
+					<li> <a href="viewbook.jsp"> View Bookings </a> </li>
 				</ul>
 			</div>
 		<%
