@@ -84,7 +84,7 @@
 			<div id="item">
 				<p style="padding: 10px; box-shadow: 1px 1px 15px rgb(200,180,50); margin: 10px;"> <%= type %> </p>
 				<ul>
-					<li> <a href="addride.jsp"> Add a Ride </a> </li>
+					<li> <a href="addRide.jsp"> Add a Ride </a> </li>
 					<li> <a href="viewride.jsp"> View a Ride </a> </li>
 					<li> <a href="remride.jsp"> Remove a Ride </a> </li>
 					<li> <a href="viewBookFromDriver.jsp"> View Bookings </a> </li>
