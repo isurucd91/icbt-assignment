@@ -68,7 +68,39 @@ public class bookService {
         }
         return resrs;
     }
+    
+    public List<Booking> GetDataForDriver(int drvid) throws ClassNotFoundException, SQLException {
+    	
+        boolean status = false;
+        List<Booking> resrs = new ArrayList<>();
+        
+        Class.forName("com.mysql.jdbc.Driver");
 
+        try {
+        	Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mccdb", "root", "root");
+
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from bookings where drvid = ?");
+            preparedStatement.setString(1, Integer.toString(drvid));
+
+            System.out.println(preparedStatement);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (status = rs.next()) {
+            	Booking res = new Booking();
+            	res.setmID(Integer.parseInt(rs.getString(1)));
+	            res.setmCustomerID(Integer.parseInt(rs.getString(2)));
+	            res.setmPickupAddress(rs.getString(3));
+	            res.setmDropAddress(rs.getString(4));
+	            res.setmRideType(rs.getString(5));
+	            res.setmDriverID(Integer.parseInt(rs.getString(6)));
+	            resrs.add(res);
+            }
+        }
+        catch (SQLException e) {
+            printSQLException(e);
+        }
+        return resrs;
+    }
+    
     public boolean Deletion(Booking TheBooking) throws ClassNotFoundException {
     	
         boolean status = false;
