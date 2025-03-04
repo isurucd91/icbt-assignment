@@ -86,7 +86,7 @@
 				<ul>
 					<li> <a href="addRide.jsp"> Add a Ride </a> </li>
 					<li> <a href="viewRide.jsp"> View a Ride </a> </li>
-					<li> <a href="remride.jsp"> Remove a Ride </a> </li>
+					<li> <a href="removeRide.jsp"> Remove a Ride </a> </li>
 					<li> <a href="viewBookFromDriver.jsp"> View Bookings </a> </li>
 				</ul>
 			</div>
