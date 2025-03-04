@@ -4,7 +4,8 @@
 <%@ page import="java.sql.*" %> 
 <%@ page import="java.io.*" %> 
 <%@ page import="java.util.List" %>
-<%@ page import="services.loginService" %> 
+<%@ page import="model.RideType" %>
+<%@ page import="services.loginService"%>  
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <html>
 <head>
@@ -63,28 +64,37 @@
 	<div id="cd_header">
 		<h1> MEGACITYCAB-Online </h1>
 	</div>
-	<%  
-		String strrideerr = request.getAttribute("rideerr") != null ? (String) request.getAttribute("rideerr") : "";
-	%>
-	<form action="AddRide" method="post">
-		<p style="font-weight: bold; text-align:center; text-shadow: 2px 2px 2px rgb(220,220,220);"> Add a Ride </p>
+	<form action="ViewRide" method="post">
+		<p style="font-weight: bold; text-align:center; text-shadow: 2px 2px 2px rgb(220,220,220);"> View Rides </p>
 		<div class = "inputs">
-			<label> Ride Types </label>
-			<select style="height: 35px; width: 105%; padding: 5px 10px; font-size: 16px; border-radius: 3px; border: 1px solid gray;" name="ridetypes" id="ridetypes">
-				<option value="Car"> Car </option>
-				<option value="Van"> Van </option>
-				<option value="Threewheeler"> Threewheeler </option>
-  			</select>
-		</div>
-		<div class = "inputs">
-			<label> Ride Details </label>
-			<input type="text" name="ridedetails">
-		</div>
-		<h5 class="error"> <%= strrideerr %> </h5>
-		<div class = "inputs">
-			<input type="submit" class="button" value="Add">
+			<input type="submit" class="button" value="Go">
 		</div>
 	</form>
+	<%
+		loginService logServ = new loginService();
+	
+		if (request.getAttribute("ridelist") != null)
+		{
+			List<RideType> list = (List<RideType>) request.getAttribute("ridelist");
+	%>
+	<div class="content">
+	    <%
+	       	for (RideType ride : list) {
+	    %>
+		<div id="item">
+			<p style="font-weight: bold; text-align:center; text-shadow: 2px 2px 2px rgb(220,220,220);">
+				<%= ride.getmID() %>
+				<p style="text-align:center;">Ride Type: <%= ride.getmRideType() %></p>
+				<p style="text-align:center;">Ride Details: <%= ride.getmRideDetails() %></p>
+			</p>
+		</div>		
+		<%
+	       	}
+		%>
+	</div>
+	<%
+		}
+	%>
 	<div id="item">
 		<ul>
 			<li> <a href="Home"> Back </a> </li>
