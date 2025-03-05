@@ -40,6 +40,11 @@ public class loginServlet extends HttpServlet {
 				
 				try {
 					session.setAttribute("type", LogServ.GetType(username));
+					session.setAttribute("rno", LogServ.GetRegNo(username));
+					session.setAttribute("email", LogServ.GetEMail(username));
+					session.setAttribute("tp", LogServ.GetTelephone(username));
+					session.setAttribute("address", LogServ.GetAddress(username));
+					session.setAttribute("nic", LogServ.GetNIC(username));
 				}
 				catch (SQLException e)
 				{

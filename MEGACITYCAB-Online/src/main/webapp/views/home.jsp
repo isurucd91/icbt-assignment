@@ -26,10 +26,12 @@
 		
 		ul{
 			list-style-type: none;
-			padding: 10px;
+			text-align: center;
+			padding : 0;
 		}
 		li{
-			display: inline;
+			display: block;
+			margin: 30px 0;
 		}
 		li a{
 			padding: 10px;
@@ -54,6 +56,11 @@
 	<%
 		String username = session.getAttribute("username").toString();
 		String type = session.getAttribute("type").toString();
+		String rno = session.getAttribute("rno").toString();
+		String email = session.getAttribute("email").toString();
+		String tp = session.getAttribute("tp").toString();
+		String address = session.getAttribute("address").toString();
+		String nic = session.getAttribute("nic").toString();
 	%>
 	
 	<div class="content">
@@ -68,7 +75,14 @@
 			{
 		%>
 			<div id="item">
-				<p style="padding: 10px; box-shadow: 1px 1px 15px rgb(200,180,50); margin: 10px;"> <%= type %> </p>
+				<p style="padding: 10px; box-shadow: 1px 1px 15px rgb(200,180,50); margin: 10px;">
+					User Type: <%= type %> <br>
+					Reg-No: <%= rno %> <br>
+					E-Mail: <%= email %> <br>
+					NIC: <%= nic %> <br>	
+					Telephone: <%= tp %> <br>
+					Address: <%= address %>			
+				</p>
 				<ul>
 					<li> <a href="book.jsp"> Book a Ride </a> </li>
 					<li> <a href="cancelBook.jsp"> Cancel a Ride </a> </li>
@@ -82,7 +96,14 @@
 			{
 		%>
 			<div id="item">
-				<p style="padding: 10px; box-shadow: 1px 1px 15px rgb(200,180,50); margin: 10px;"> <%= type %> </p>
+				<p style="padding: 10px; box-shadow: 1px 1px 15px rgb(200,180,50); margin: 10px;">
+					User Type: <%= type %> <br>
+					Reg-No: <%= rno %> <br>
+					E-Mail: <%= email %> <br>
+					NIC: <%= nic %> <br>	
+					Telephone: <%= tp %> <br>
+					Address: <%= address %>			
+				</p>
 				<ul>
 					<li> <a href="addRide.jsp"> Add a Ride </a> </li>
 					<li> <a href="viewRide.jsp"> View a Ride </a> </li>

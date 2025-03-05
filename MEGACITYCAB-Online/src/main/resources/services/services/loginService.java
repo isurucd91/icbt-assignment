@@ -59,6 +59,121 @@ public class loginService {
 		return type;
 	}
 	
+	public String GetNIC(String username) throws ClassNotFoundException, SQLException {
+
+		boolean status = false;
+		String nic = "";
+
+		Class.forName("com.mysql.jdbc.Driver");
+
+		try {
+			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mccdb", "root", "root");
+
+			PreparedStatement preparedStatement = connection.prepareStatement("select * from users where username = ?");
+			preparedStatement.setString(1, username);
+
+			System.out.println(preparedStatement);
+			ResultSet rs = preparedStatement.executeQuery();
+			status = rs.next();
+			nic = rs.getString(7);
+		} catch (SQLException e) {
+			printSQLException(e);
+		}
+		return nic;
+	}
+	
+	public String GetRegNo(String username) throws ClassNotFoundException, SQLException {
+
+		boolean status = false;
+		String rno = "";
+
+		Class.forName("com.mysql.jdbc.Driver");
+
+		try {
+			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mccdb", "root", "root");
+
+			PreparedStatement preparedStatement = connection.prepareStatement("select * from users where username = ?");
+			preparedStatement.setString(1, username);
+
+			System.out.println(preparedStatement);
+			ResultSet rs = preparedStatement.executeQuery();
+			status = rs.next();
+			rno = rs.getString(6);
+		} catch (SQLException e) {
+			printSQLException(e);
+		}
+		return rno;
+	}
+	
+	public String GetEMail(String username) throws ClassNotFoundException, SQLException {
+
+		boolean status = false;
+		String email = "";
+
+		Class.forName("com.mysql.jdbc.Driver");
+
+		try {
+			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mccdb", "root", "root");
+
+			PreparedStatement preparedStatement = connection.prepareStatement("select * from users where username = ?");
+			preparedStatement.setString(1, username);
+
+			System.out.println(preparedStatement);
+			ResultSet rs = preparedStatement.executeQuery();
+			status = rs.next();
+			email = rs.getString(4);
+		} catch (SQLException e) {
+			printSQLException(e);
+		}
+		return email;
+	}
+	
+	public String GetTelephone(String username) throws ClassNotFoundException, SQLException {
+
+		boolean status = false;
+		String tp = "";
+
+		Class.forName("com.mysql.jdbc.Driver");
+
+		try {
+			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mccdb", "root", "root");
+
+			PreparedStatement preparedStatement = connection.prepareStatement("select * from users where username = ?");
+			preparedStatement.setString(1, username);
+
+			System.out.println(preparedStatement);
+			ResultSet rs = preparedStatement.executeQuery();
+			status = rs.next();
+			tp = rs.getString(8);
+		} catch (SQLException e) {
+			printSQLException(e);
+		}
+		return tp;
+	}
+	
+	public String GetAddress(String username) throws ClassNotFoundException, SQLException {
+
+		boolean status = false;
+		String address = "";
+
+		Class.forName("com.mysql.jdbc.Driver");
+
+		try {
+			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mccdb", "root", "root");
+
+			PreparedStatement preparedStatement = connection.prepareStatement("select * from users where username = ?");
+			preparedStatement.setString(1, username);
+
+			System.out.println(preparedStatement);
+			ResultSet rs = preparedStatement.executeQuery();
+			status = rs.next();
+			address = rs.getString(9);
+		} catch (SQLException e) {
+			printSQLException(e);
+		}
+		return address;
+	}
+	
 	public String GetUserName(int id) throws ClassNotFoundException, SQLException {
 
 		boolean status = false;

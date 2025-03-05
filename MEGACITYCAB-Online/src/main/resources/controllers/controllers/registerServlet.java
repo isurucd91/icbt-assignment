@@ -69,6 +69,11 @@ public class registerServlet extends HttpServlet{
 								
 								try {
 									session.setAttribute("type", RegServ.GetType(username));
+									session.setAttribute("rno", RegServ.GetRegNo(username));
+									session.setAttribute("email", RegServ.GetEMail(username));
+									session.setAttribute("tp", RegServ.GetTelephone(username));
+									session.setAttribute("address", RegServ.GetAddress(username));
+									session.setAttribute("nic", RegServ.GetNIC(username));
 								}
 								catch (SQLException e)
 								{
